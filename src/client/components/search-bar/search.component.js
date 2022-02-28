@@ -1,6 +1,6 @@
 import React, {  useState } from "react";
 import Card from "../main-card/card.component";
-
+// for a search feature 
 export default function SearchBar({displaySearch,setDisplaySearch}){
     const[searchValue, setSearchValue]=useState()
     return(

@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from 'react-bootstrap';
 
-export default function SelectNumberOfPages({ setvalue }) {
+export default function SelectNumberOfPages({ setvalue }:any) {
     return (
         <>
             <Form.Select aria-label="Default select example">

@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { fetchDb } from "../../helper/fetchMethod";
+import React from "react";
+
+interface Props {
+  sortDescending:boolean
+  setSortDescending:(sortDescending:boolean)=> void
+  sortReverse:boolean
+  setSortReverse:(sortReverse:boolean)=> void
+}
 
 export default function Sort({
   sortDescending,
   setSortDescending,
   sortReverse,
-  setSortReverse,
-  sortByHeight,
-  setSortByHeight,
-  setPokemonsData,
-  pokemonsData
-}) {
+  setSortReverse
+}:Props) {
 
   return (
     <>

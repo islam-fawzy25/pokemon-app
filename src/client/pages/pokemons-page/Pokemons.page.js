@@ -13,7 +13,7 @@ export default function PokemonPage() {
     //Select bar stats
     const [pokemonsPerPage, setPokemonsPerPage] = useState(10)
     const [pageNumber, setPageNumber] = useState(0)
-    const [numberOfPokemons, setNumberOfPokemons] = useState(400)
+    const [numberOfPokemons, setNumberOfPokemons] = useState(400) // for a new feature * user can choose total of pokemons 
 
     const pokemonPerPgae = pokemonsPerPage
     const pagesVisited = pageNumber * pokemonPerPgae
@@ -27,23 +27,17 @@ export default function PokemonPage() {
     // const [sortByWeight, setSortByWeight] = useState(false)
     const [pokemosByWeight, setPokemonsByWeight] = useState([])
 
-
-    useMemo(async () => {
-        setPokemonsData(pokemonsData.reverse())
-        setPokemonsData(pokemonsData.sort())
-        setPokemonsData(pokemonsData)
-    }, [sortDescending, sortReverse])
-    //  const sortDataReverse = useMemo(async()=>  setPokemonsData(pokemonsData.reverse()) ,[sortReverse])
-    // const ByDataHeight = useMemo(async()=>  setPokemonsData(pokemonsData.sort()) ,[sortByHeight])
-    // // const sortDataByWeight = useMemo(async()=>  setPokemonsData(pokemonsData.sort()) ,[sortByWeight])
-
     useEffect(() => {
         (async () => {
             const pokemonData = await fetchDb(`https://pokeapi.co/api/v2/pokemon?offset=40&limit=${numberOfPokemons}`)
             const pokemonsNames = await pokemonData.results.map(pokemon => pokemon.name)
             setPokemonsData(pokemonsNames)
+            if (sortReverse) { return setPokemonsData(pokemonsData.sort((a, b) => { return b - a })) }
+            if (sortDescending) { return setPokemonsData(pokemonsData.sort((a, b) => { return a - b })) }
+             
         })()
-    }, [sortReverse, setSortReverse])
+        console.log(pokemonsData);
+    }, [sortReverse, sortDescending])
 
     return (
         <div className="pokemon-page-container">
