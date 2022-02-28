@@ -13,7 +13,7 @@ export default function PokemonPage() {
     //Select bar stats
     const [pokemonsPerPage, setPokemonsPerPage] = useState(10)
     const [pageNumber, setPageNumber] = useState(0)
-    const [numberOfPokemons, setNumberOfPokemons] = useState(20)
+    const [numberOfPokemons, setNumberOfPokemons] = useState(400)
 
     const pokemonPerPgae = pokemonsPerPage
     const pagesVisited = pageNumber * pokemonPerPgae
