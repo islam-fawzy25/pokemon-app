@@ -1,0 +1,26 @@
+.singl-card-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+.singl-card-container h3{
+  text-align: center;
+}
+.singl-card-image-container{
+  display: flex;
+  justify-content: center;
+}
+
+.singl-card-details{
+  display: flex;
+  justify-content: center; 
+}
+
+.singl-card-details p{
+  margin: 5px;
+}
+
+.dropdwon-container >div{
+    margin: 5px;
+}

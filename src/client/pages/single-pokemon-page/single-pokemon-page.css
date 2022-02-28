@@ -1,0 +1,7 @@
+.single-pokemon-page-container{
+    margin-top: 20px;
+    display: flex;
+    justify-content:space-around ;
+    padding-left: 10%;
+    padding-right: 10%;
+}

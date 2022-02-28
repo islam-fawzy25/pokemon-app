@@ -1,0 +1,58 @@
+.nav-bar{
+   display: flex ;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   height: 70px;
+   background-color: antiquewhite;
+   width: 100%;
+   padding-left: 10%;
+   padding-right: 10%;
+}
+
+.nav-bar div{
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.pokemon-page-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-page-container{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+.pokemon-page-container main{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.paginationBttns{
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttns a{
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid rgb(52, 79, 236);
+    border-radius: 5px;
+    color: rgb(160, 160, 238);
+    cursor: pointer;
+}
+
+.paginationActive a{
+    background-color: rgb(63, 68, 141);
+}
+
