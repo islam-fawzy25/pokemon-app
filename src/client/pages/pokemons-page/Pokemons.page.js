@@ -56,11 +56,12 @@ export default function PokemonPage() {
                 </div>
                 <div>
                     <Sort
-                        arrayToSort={pokemonsData}
                         setSortDescending={setSortDescending}
                         sortDescending={sortDescending}
                         sortReverse={sortReverse}
                         setSortReverse={setSortReverse}
+                        pokemonsData={pokemonsData}
+                        setPokemonsData={setPokemonsData}
                     // sortByHeight={sortByHeight}
                     // setSortByHeight={setSortByHeight}
                     />
