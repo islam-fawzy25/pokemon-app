@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import "./pokemons-page.css"
 import { fetchDb } from "../../helper/fetchMethod";
 import Card from "../../components/main-card/card.component";
@@ -37,6 +37,7 @@ export default function PokemonPage() {
              
         })()
         console.log(pokemonsData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sortReverse, sortDescending])
 
     return (

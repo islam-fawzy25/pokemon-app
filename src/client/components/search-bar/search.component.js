@@ -1,4 +1,5 @@
 import React, {  useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import Card from "../main-card/card.component";
 // for a search feature 
 export default function SearchBar({displaySearch,setDisplaySearch}){

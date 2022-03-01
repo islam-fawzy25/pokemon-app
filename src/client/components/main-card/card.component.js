@@ -15,6 +15,7 @@ export default function Card({ pokemonName }) {
             setImageUrl(response.sprites.front_shiny)
             setPokemonAbilities(response.abilities)
         })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
