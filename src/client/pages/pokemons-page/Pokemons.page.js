@@ -32,8 +32,8 @@ export default function PokemonPage() {
             const pokemonData = await fetchDb(`https://pokeapi.co/api/v2/pokemon?offset=40&limit=${numberOfPokemons}`)
             const pokemonsNames = await pokemonData.results.map(pokemon => pokemon.name)
             setPokemonsData(pokemonsNames)
-            if (sortReverse) { return setPokemonsData(pokemonsData.sort((a, b) => { return b - a })) }
-            if (sortDescending) { return setPokemonsData(pokemonsData.sort((a, b) => { return a - b })) }
+            if (sortReverse) { return setPokemonsData(pokemonsData.sort((a, b) => { return b.localeCompare(a) })) }
+            if (sortDescending) { return setPokemonsData(pokemonsData.sort((a, b) => { return a.localeCompare(b) })) }
              
         })()
         console.log(pokemonsData);
