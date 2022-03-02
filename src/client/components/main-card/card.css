@@ -1,7 +1,7 @@
 .card-container{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
     width: 200px;
     height: 500px;
     margin: 30px;
@@ -12,19 +12,14 @@
 
 .image-container{
    display: flex;
-   position: relative;
-   justify-content: center;
-   background-color: cornflowerblue;
+   background-color: rgb(100, 149, 237);
    width: 150px;
    height: 300px;
    border-radius: 10%;
 }
 
 .image-container img{
-    position: relative;
-    justify-content: center;
-    width: 100px;
-    height: 200px;   
+    width: 100%;
 }
 
 .card-container h3{
@@ -32,6 +27,8 @@
 }
 
 .details-container{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -39,4 +36,11 @@
 .see-details{
    display: flex;
    justify-content: center;
+}
+.see-details a{
+    text-decoration: none;
+}
+
+.hr{
+    width: 100%;
 }

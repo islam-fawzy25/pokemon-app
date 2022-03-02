@@ -2,19 +2,31 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 80%;
+    align-items: center;
 }
+
+.singl-card-image-container{
+  background-color:  rgb(100, 149, 237);
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 7px;
+}
+
 .singl-card-container h3{
   text-align: center;
 }
-.singl-card-image-container{
+.singl-card-details-container{
+  width: 800px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
-
 .singl-card-details{
   display: flex;
-  justify-content: center; 
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .singl-card-details p{
@@ -23,4 +35,5 @@
 
 .dropdwon-container >div{
     margin: 5px;
+    width: 900px;
 }
