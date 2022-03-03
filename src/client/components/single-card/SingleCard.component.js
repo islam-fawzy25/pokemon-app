@@ -83,7 +83,7 @@ export default function SingleCard() {
                     <div>
                         <DropDown
                             visible={typesVisible}
-                            onClick={() => { setTypesVisible(!formsVisible) }}
+                            onClick={() => { setTypesVisible(!typesVisible) }}
                             title="Types"
                         >
                             {pokemonTypes.map(pokemon => (
@@ -92,7 +92,7 @@ export default function SingleCard() {
                                 </div>
                             ))}
                             {pokemonTypes.map(pokemon => (
-                                <div key={pokemon.type}>
+                                <div key={pokemon.type.name}>
                                     <li>Name: {pokemon.type.name}</li>
                                 </div>
                             ))}
@@ -105,7 +105,7 @@ export default function SingleCard() {
                             title="Game indices"
                         >
                             {pokemonGameIndices.map(pokemon => (
-                                <div key={pokemon.game_index}>
+                                <div key={pokemon.version.name}>
                                     <div>
                                         <li>Game index: {pokemon.game_index}</li>
                                     </div>
@@ -123,7 +123,7 @@ export default function SingleCard() {
                             title="Stats"
                         >
                             {pokemonStats.map(pokemon => (
-                                <div key={pokemon.effort}>
+                                <div key={pokemon.stat.name}>
                                     <div>
                                         <li>Name: {pokemon.stat.name}<p>Effort: {pokemon.effort}</p>  Base stat: {pokemon.base_stat}</li>
                                     </div>

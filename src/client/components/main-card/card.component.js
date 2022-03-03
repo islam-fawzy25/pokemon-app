@@ -45,7 +45,7 @@ export default function Card({ pokemonName }) {
                 <hr />
             </div>
             <div className='see-details'>
-                    <a href={`/pokemon/${pokemonName}`}>See Details</a>
+                <a href={`/pokemon/${pokemonName}`}>See Details</a>
             </div>
         </div>
     )

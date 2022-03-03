@@ -31,13 +31,12 @@ export default function PokemonPage() {
         (async () => {
             const pokemonData = await fetchDb(`https://pokeapi.co/api/v2/pokemon?offset=40&limit=${numberOfPokemons}`)
             const pokemonsNames = await pokemonData.results.map(pokemon => pokemon.name)
-            setPokemonsData(pokemonsNames)
-            if (sortReverse) { return setPokemonsData(pokemonsData.sort((a, b) => { return b.localeCompare(a) })) }
-            if (sortDescending) { return setPokemonsData(pokemonsData.sort((a, b) => { return a.localeCompare(b) })) }
-             
+             setPokemonsData(pokemonsNames)
+            if (sortReverse) { return  setPokemonsData(await pokemonsData.sort((a, b) => { return b.localeCompare(a) })) }
+            if (sortDescending) { return setPokemonsData(await pokemonsData.sort((a, b) => { return a.localeCompare(b) })) }
         })()
         console.log(pokemonsData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sortReverse, sortDescending])
 
     return (
