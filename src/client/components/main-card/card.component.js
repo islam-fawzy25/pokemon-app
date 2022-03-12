@@ -19,11 +19,9 @@ export default function Card({ pokemonName }) {
 
     return (
         <div className='card-container'>
-
             <div className='image-container'>
                 <img src={imageURl} alt={pokemonName} />
             </div>
-
             <h3>{pokemonName}</h3>
             <div className='details-container'>
                 <div>

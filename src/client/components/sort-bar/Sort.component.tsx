@@ -8,9 +8,7 @@ interface Props {
 }
 
 export default function Sort({
-  sortDescending,
   setSortDescending,
-  sortReverse,
   setSortReverse
 }: Props) {
 
@@ -26,8 +24,6 @@ export default function Sort({
           setSortDescending(false)
           setSortReverse(true)
         }}>From Z-A</option>
-        {/* <option onClick={() => { setSortByHeight(!sortByHeight) }}>By Height</option>
-        <option onClick={() => { }}>By weight</option> */}
       </select>
     </>
   )

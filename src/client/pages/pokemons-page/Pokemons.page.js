@@ -5,7 +5,6 @@ import Card from "../../components/main-card/card.component";
 import ReactPaginate from "react-paginate";
 import SelectNumberOfPages from "../../components/select-bar/SelectBar.component";
 import Sort from "../../components/sort-bar/Sort.component";
-import SearchBar from "../../components/search-bar/search.component";
 
 export default function PokemonPage() {
     const [pokemonsData, setPokemonsData] = useState()
@@ -23,19 +22,15 @@ export default function PokemonPage() {
     // //Sort 
     const [sortDescending, setSortDescending] = useState(false)
     const [sortReverse, setSortReverse] = useState(false)
-    //const [sortByHeight, setSortByHeight] = useState(false)
-    // const [sortByWeight, setSortByWeight] = useState(false)
-    const [pokemosByWeight, setPokemonsByWeight] = useState([])
 
     useEffect(() => {
         (async () => {
             const pokemonData = await fetchDb(`https://pokeapi.co/api/v2/pokemon?offset=40&limit=${numberOfPokemons}`)
             const pokemonsNames = await pokemonData.results.map(pokemon => pokemon.name)
-             setPokemonsData(pokemonsNames)
-            if (sortReverse) { return  setPokemonsData(await pokemonsData.sort((a, b) => { return b.localeCompare(a) })) }
+            setPokemonsData(pokemonsNames)
+            if (sortReverse) { return setPokemonsData(await pokemonsData.sort((a, b) => { return b.localeCompare(a) })) }
             if (sortDescending) { return setPokemonsData(await pokemonsData.sort((a, b) => { return a.localeCompare(b) })) }
         })()
-        console.log(pokemonsData);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sortReverse, sortDescending])
 
@@ -46,18 +41,9 @@ export default function PokemonPage() {
                     <SelectNumberOfPages setvalue={setPokemonsPerPage} />
                 </div>
                 <div>
-                    <SearchBar />
-                </div>
-                <div>
                     <Sort
                         setSortDescending={setSortDescending}
-                        sortDescending={sortDescending}
-                        sortReverse={sortReverse}
                         setSortReverse={setSortReverse}
-                        pokemonsData={pokemonsData}
-                        setPokemonsData={setPokemonsData}
-                    // sortByHeight={sortByHeight}
-                    // setSortByHeight={setSortByHeight}
                     />
                 </div>
             </nav>
